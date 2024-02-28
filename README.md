@@ -20,7 +20,14 @@ simulation_app = SimulationApp(
 import torch
 a = torch.zeros(4, device="cuda:0")
 ```
-解析命令行参数,从命令行获取程序运行时的参数设置
+argparse模块用于解析命令行参数,从命令行获取程序运行时的参数设置
+
+通过ArgumentParser类创建了一个解析器对象parser，然后定义了一系列命令行参数。  
+--robot: 用于指定要加载的机器人配置文件的名称，默认为 "franka.yml"。  
+--external_asset_path: 用于指定加载外部机器人时的外部资源路径。默认为 None，即不指定外部路径。  
+--external_robot_configs_path: 用于指定加载外部机器人时的外部机器人配置文件路径。默认为 None，即不指定外部路径。
+--visualize_spheres: 当设置为 True 时，可视化机器人的球形部件。该参数采用布尔值。  
+--reactive: 当设置为 True 时，以反应模式（reactive mode）运行。同样采用布尔值。
 ```
 import argparse
 
@@ -60,7 +67,7 @@ parser.add_argument(
 args = parser.parse_args()
 ```
 
-导入仿真
+导入仿真，创建了一个 SimulationApp 的实例对象。在创建实例时，传入了一个字典作为参数，字典中包含仿真的配置信息
 ```
 from omni.isaac.kit import SimulationApp
 
@@ -71,7 +78,11 @@ simulation_app = SimulationApp(
         "height": "1080",
     }
 )
-# Standard Library
+```
+从Python的 typing 模块中导入了 Dict 类型，用于指定字典类型的变量  
+carb模块日志记录；numpy库重命名为 np，用于进行数值计算和数组操作；导入World类，用于创建仿真世界；导入了 cuboid 和 sphere 类，用于创建立方体和球形物体。  
+从自定义的 helper 模块（example文件夹内）中导入了两个函数 add_extensions 和 add_robot_to_scene，用于向场景中添加扩展和机器人。
+```
 from typing import Dict
 
 # Third Party
