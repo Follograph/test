@@ -6,7 +6,7 @@ robot_cfg:
     usd_flip_joints: {}
     usd_flip_joint_limits: []
 
-    urdf_path: "robot/flexiv_description/flexiv_rizon4_total.urdf"
+    urdf_path: "robot/flexiv_description/flexiv_rizon4_test.urdf"
     asset_root_path: "robot/flexiv_description"
     
     base_link: "base_link"
@@ -147,11 +147,9 @@ robot_cfg:
     external_asset_path: null # Use this to add path for externally located assets/robot folder.
 
     cspace:
-      joint_names: ["joint1","joint2","joint3","joint4","joint5","joint6","joint7",
-      "left_outer_knuckle_joint","left_inner_knuckle_joint","left_inner_finger_joint",
-      "right_outer_knuckle_joint","right_inner_knuckle_joint","right_inner_finger_joint"] 
-      retract_config: [0.0, -0.2, 0.0, 0.57, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-      null_space_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-      cspace_distance_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+      joint_names: ["joint1","joint2","joint3","joint4","joint5","joint6","joint7"] 
+      retract_config: [0.0, -0.2, 0.0, 0.57, 0.0, 0.2, 0.0]
+      null_space_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+      cspace_distance_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
       max_jerk: 500.0
       max_acceleration: 15.0
