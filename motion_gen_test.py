@@ -5,10 +5,6 @@ import threading
 
 a = torch.zeros(4, device="cuda:0")
 
-import sys
-sys.path.insert(0, "/home/yangfan/flexiv_rdk/lib_py")
-import flexivrdk
-
 # Standard Library
 import argparse
 
@@ -138,8 +134,7 @@ def main():
 
     articulation_controller = robot.get_articulation_controller()
 
-    gripper = flexivrdk.Gripper(robot)
-    gripper.move(0.09, 0.1, 20)
+    
 
     world_cfg_table = WorldConfig.from_dict(
         load_yaml(join_path(get_world_configs_path(), "collision_table.yml"))
@@ -348,8 +343,6 @@ def main():
             # set desired joint angles obtained from IK:
             articulation_controller.apply_action(art_action)
 
-            time.sleep(0.5)
-            gripper.move(0.01, 0.1, 20)
 
             cmd_idx += 1
             for _ in range(2):

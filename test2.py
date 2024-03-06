@@ -6,7 +6,7 @@ import threading
 # Import Flexiv RDK Python library
 # fmt: off
 import sys
-sys.path.insert(0, "/home/yangfan/test/flexiv_rdk/lib_py")
+sys.path.insert(0, "../flexiv_rdk/lib_py")
 import flexivrdk
 # fmt: on
 
