@@ -1,0 +1,31 @@
+##
+## Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+##
+## NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
+## property and proprietary rights in and to this material, related
+## documentation and any modifications thereto. Any use, reproduction,
+## disclosure or distribution of this material and related documentation
+## without an express license agreement from NVIDIA CORPORATION or
+## its affiliates is strictly prohibited.
+##
+
+##
+cuboid:
+  table:
+    dims: [5, 5, 0.2] # x, y, z
+    pose: [0.0, 0.0, -0.1, 1, 0, 0, 0.0] 
+    
+mesh:
+  virbox_ori:
+    pose: [0.4843, -0.0082, 0.0, 0.70710678, 0.70710678, 0, 0]
+    file_path: "scene/box_grid.obj" 
+  virbox_des:
+    pose: [0.4843, 0.2918, 0.0, 0.70710678, 0.70710678, 0, 0]
+    file_path: "scene/box_grid.obj" 
+  box_ori:
+    pose: [0.45, 0.039, 0.0, 0.7071, 0.7071, 0, 0]
+    file_path: "scene/box_mm.obj" 
+  box_des:
+    pose: [0.45, 0.339, 0.0, 0.7071, 0.7071, 0, 0]
+    file_path: "scene/box_mm.obj" 
+    

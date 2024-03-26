@@ -1,0 +1,157 @@
+robot_cfg:
+  kinematics:
+    usd_path: "home/yangfan/curobo/src/curobo/content/assets/robot/flexiv_description/flexiv_rizon4_total.usd"
+    usd_robot_root: "/robot"
+    isaac_usd_path: ""
+    usd_flip_joints: {}
+    usd_flip_joint_limits: []
+
+    urdf_path: "robot/flexiv_description/flexiv_rizon4_total.urdf"
+    asset_root_path: "robot/flexiv_description"
+    
+    base_link: "base_link"
+    ee_link: "tcp"
+    link_names: null
+    lock_joints: null
+    extra_links: null
+
+    
+    collision_link_names:
+      [       
+        "base_link",
+        "link1",
+        "link2",
+        "link3",
+        "link4",
+        "link5",
+        "link6",
+        "link7",
+        "base_hand",
+        "left_finger_mount",
+        "left_finger_tip",
+        "right_finger_mount",
+        "right_finger_tip",
+      ]      
+    collision_spheres:
+      base_link:
+        - "center": [0.0, 0.0, 0.082]
+          "radius": 0.09
+      link1:
+        - "center": [-0.0, 0.0, 0.053]
+          "radius": 0.09
+        - "center": [-0.0, 0.0, 0.199]
+          "radius": 0.09
+        - "center": [-0.0, 0.0, 0.126]
+          "radius": 0.09
+      link2:
+        - "center": [0.0, 0.055, 0.022]
+          "radius": 0.09
+        - "center": [0.0, 0.037, 0.138]
+          "radius": 0.08
+      link3:
+        - "center": [0.0, -0.0, 0.059]
+          "radius": 0.08
+        - "center": [-0.006, 0.022, 0.183]
+          "radius": 0.08
+      link4:
+        - "center": [0.0, 0.042, 0.017]
+          "radius": 0.08
+        - "center": [-0.013, 0.029, 0.129]
+          "radius": 0.08
+      link5:
+        - "center": [0.0, -0.0, 0.046]
+          "radius": 0.07
+        - "center": [0.0, -0.009, 0.185]
+          "radius": 0.07
+        - "center": [0.0, -0.005, 0.116]
+          "radius": 0.07
+      link6:
+        - "center": [0.0, 0.043, 0.012]
+          "radius": 0.07
+        - "center": [0.005, 0.067, 0.109]
+          "radius": 0.075
+      link7:
+        - "center": [0.0, 0.0, 0.03]
+          "radius": 0.065
+      base_hand:
+        - "center": [-0.0, -0.0, 0.038]
+          "radius": 0.06
+      left_finger_tip:
+        - "center": [-0.0, 0.003, 0.018]
+          "radius": 0.015
+      right_finger_tip:
+        - "center": [0.0, 0.005, 0.016]
+          "radius": 0.015
+      right_finger_mount:
+        - "center": [-0.0, 0.006, -0.009]
+          "radius": 0.03
+      left_finger_mount:
+        - "center": [0.0, -0.0, -0.009]
+          "radius": 0.03
+          
+          
+    collision_sphere_buffer: 0.005
+    extra_collision_spheres: {}
+    self_collision_ignore: 
+      { 
+        "base_link": ["link1", "link2", "link3", "link4"],
+        "link1": ["link2", "link3", "link4"],
+        "link2": ["link3", "link4", "link5"],
+        "link3": ["link4", "link5", "link6", "link7"],
+        "link4": ["link5", "link6", "link7"],
+        "link5": ["link6", "base_hand"],
+        "link6": ["link7", "base_hand"],
+        "link7": ["base_hand"],
+        "base_hand": [ "left_finger_mount", "left_finger_tip", "right_finger_mount", "right_finger_tip"],
+        "left_finger_mount": ["left_finger_tip", "right_finger_mount", "right_finger_tip"],
+        "left_finger_tip": ["right_finger_mount", "right_finger_tip"],
+        "right_finger_mount": ["right_finger_tip"],
+      }      
+    self_collision_buffer: 
+      {
+        "base_link": 0.0,
+        "link1": 0.0, 
+        "link2": 0.0,
+        "link3": 0.0,
+        "link4": 0.0,
+        "link5": 0.0,
+        "link6": 0.0,
+        "link7": 0.0,
+        "base_hand": 0.0,
+        "left_finger_mount": 0.0,
+        "left_finger_tip": 0.0,
+        "right_finger_mount": 0.0,
+        "right_finger_tip": 0.0,
+      }
+    use_global_cumul: True
+    mesh_link_names: 
+      [        
+        "base_link",
+        "link1",
+        "link2",
+        "link3",
+        "link4",
+        "link5",
+        "link6",
+        "link7",
+        "base_hand",
+        "left_outer_bar",
+        "left_inner_bar",
+        "left_finger_mount",
+        "left_finger_tip",
+        "right_outer_bar",
+        "right_inner_bar",
+        "right_finger_mount",
+        "right_finger_tip",
+      ]          
+    external_asset_path: null # Use this to add path for externally located assets/robot folder.
+
+    cspace:
+      joint_names: ["joint1","joint2","joint3","joint4","joint5","joint6","joint7",
+      "left_outer_knuckle_joint","left_inner_knuckle_joint","left_inner_finger_joint",
+      "right_outer_knuckle_joint","right_inner_knuckle_joint","right_inner_finger_joint"] 
+      retract_config: [0.0, -0.2, 0.0, 0.57, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      null_space_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+      cspace_distance_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+      max_jerk: 500.0
+      max_acceleration: 15.0
