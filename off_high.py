@@ -417,7 +417,7 @@ def main():
             articulation_controller.apply_action(art_action)
             
             my_denso.gripper.apply_action(
-                ArticulationAction([0.2, 0.2])
+                ArticulationAction([0.03, 0.03])
             )
             # print("open", gripper_positions)
 
@@ -611,7 +611,7 @@ def main():
                         )
                     else:
                         my_denso.gripper.apply_action(
-                            ArticulationAction([0.1, 0.1])
+                            ArticulationAction([0.05, 0.05])
                         )      
                       
             print ("obj_position", obj_position)
